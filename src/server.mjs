@@ -43,7 +43,7 @@ fastify.post('/upload', async function (req, reply) {
   return { url }
 })
 
-fastify.listen({ port: +process.env.PORT || 10846 }, (err) => {
+fastify.listen({ port: +process.env.PORT || 10846, host: '0.0.0.0' }, (err) => {
   if (err) throw err
   console.log(`server listening on ${fastify.server.address().port}`)
 })
