@@ -31,3 +31,7 @@ The file is saved to an S3-compatible storage, and a URL is returned in JSON for
 Note the URL pathname — it is constructed in a way such that if you put the exact same file on the IPFS network, you would get the same content identifier. This means that the same content can also be accessed via any IPFS gateway, given that the file is available on IPFS:
 
 > https://ipfs.io/ipfs/bafybeignkhelrt2ndg57sn7elg5eiaqkdtytrndjsutunlq6ye5unstnla/hello.html
+
+## How I use it
+
+I use it with [up.spacet.me](https://github.com/dtinth/up.spacet.me).
