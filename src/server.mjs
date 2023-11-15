@@ -2,9 +2,9 @@ import Fastify from 'fastify'
 import multipart from '@fastify/multipart'
 import cors from '@fastify/cors'
 import { createHash } from 'crypto'
-import { cidOf } from './cidOf.mjs'
 import * as Minio from 'minio'
 import mime from 'mime'
+import { ipfsify } from './ipfsify.mjs'
 
 const minioClient = new Minio.Client({
   endPoint: process.env.STORAGE_ENDPOINT,
@@ -34,7 +34,7 @@ fastify.post('/upload', async function (req, reply) {
     req.query.name === 'hash'
       ? `${sha}.${data.filename.split('.').pop()}`
       : data.filename
-  const cid = await cidOf(buffer, filename)
+  const { cid } = await ipfsify(buffer, filename)
   const key = `ipfs/${cid}/${filename}`
   await minioClient.putObject(String(process.env.STORAGE_BUCKET), key, buffer, {
     'Content-Type': mime.getType(filename),

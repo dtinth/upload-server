@@ -11,9 +11,15 @@ dependencies:
   '@fastify/multipart':
     specifier: ^7.7.3
     version: 7.7.3
+  '@helia/car':
+    specifier: ^1.0.0
+    version: 1.0.0
   '@helia/unixfs':
     specifier: ^1.4.1
     version: 1.4.1
+  '@ipld/car':
+    specifier: ^5.2.0
+    version: 5.2.0
   fastify:
     specifier: ^4.21.0
     version: 4.21.0
@@ -253,6 +259,24 @@ packages:
       - supports-color
     dev: false
 
+  /@helia/car@1.0.0:
+    resolution: {integrity: sha512-PoSS68l9ZeL8X8Ns2Ta2nqCyy8Kx58soWt5rl05RrPOUMB1l4u7RuwcaULXRNNnPScT/y5Ncwx0zax9t0S5m3A==}
+    dependencies:
+      '@helia/interface': 1.2.1
+      '@ipld/car': 5.2.0
+      '@ipld/dag-pb': 4.0.4
+      '@libp2p/interfaces': 3.3.2
+      cborg: 1.10.2
+      interface-blockstore: 5.2.5
+      it-map: 3.0.3
+      multiformats: 11.0.2
+      p-defer: 4.0.0
+      p-queue: 7.3.4
+      progress-events: 1.0.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
   /@helia/interface@1.2.1:
     resolution: {integrity: sha512-Jmq6yB6Q4SvMMoiY/E7coy61DfGVmvicKJH7pA6fONLnqzpH+pa/iZ2vUryKd5dNkR3IXrro4A6fKMIbMXmkdA==}
     engines: {node: '>=16.0.0', npm: '>=7.0.0'}
@@ -292,6 +316,16 @@ packages:
     transitivePeerDependencies:
       - encoding
       - supports-color
+    dev: false
+
+  /@ipld/car@5.2.0:
+    resolution: {integrity: sha512-Y4DiyVoPaeGxY6gKV/0A/73SlIIuDu7fl25NdlrO6BYhyTN6v59KqcilmMXbiBA/zcf7cZr1GZVPHRyG2+nmAw==}
+    engines: {node: '>=16.0.0', npm: '>=7.0.0'}
+    dependencies:
+      '@ipld/dag-cbor': 9.0.3
+      cborg: 1.10.2
+      multiformats: 11.0.2
+      varint: 6.0.0
     dev: false
 
   /@ipld/dag-cbor@9.0.3:
